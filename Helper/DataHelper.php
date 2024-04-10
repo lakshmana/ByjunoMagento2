@@ -290,7 +290,7 @@ class DataHelper extends \Magento\Framework\App\Helper\AbstractHelper
     function byjunoIsStatusOk($status, $position)
     {
         try {
-            $config = trim($this->_scopeConfig->getValue($position, \Magento\Store\Model\ScopeInterface::SCOPE_STORE));
+            $config = trim($this->_scopeConfig->getValue($position, \Magento\Store\Model\ScopeInterface::SCOPE_STORE) ?? '');
             if ($config === "")
             {
                 return false;
